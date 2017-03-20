@@ -6,10 +6,9 @@ import java.util.Scanner;
 
 /**
  * 문제 : DSLR
- * Number : 9019
  * 출처 : https://www.acmicpc.net/problem/9019
  */
-public class Main {
+public class DSLR {
 
     private static final int MAX = 9999;
 
@@ -93,7 +92,7 @@ public class Main {
         int t = scanner.nextInt();
 
         int from, to;
-        Main dslr = new Main();
+        DSLR dslr = new DSLR();
         for ( int count = 0; count < t; count++ ) {
             from = scanner.nextInt();
             to = scanner.nextInt();

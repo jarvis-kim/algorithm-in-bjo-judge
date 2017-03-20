@@ -7,22 +7,18 @@ import java.util.Scanner;
 /**
  * 문제 : 숨바꼭질
  * BFS로 풀기
- *
  * 문제 출처 : https://www.acmicpc.net/problem/1697
- *
- * 런타임 에러
  */
-public class Main {
+public class HideAndSeek {
 
     static final int MAX = 100001;
     static final int MIN = 0;
 
     public static int solve(int x, int k) {
         Queue<Integer> queue = new LinkedList<>();
-        int length = k + 1;
-        int max = length > MAX ? MAX : length * 2;
-        boolean[] visited = new boolean[ length * 2];
-        int[] counts = new int[ length * 2 ];
+        int length = MAX;
+        boolean[] visited = new boolean[ length];
+        int[] counts = new int[ length ];
 
         queue.add(x);
         visited[ x ] = true;
@@ -34,11 +30,11 @@ public class Main {
                 move(position, position - 1, visited, counts, queue);
             }
 
-            if ( position + 1 < max && !visited[ position + 1 ] ) {
+            if ( position + 1 < MAX && !visited[ position + 1 ] ) {
                 move(position, position + 1, visited, counts, queue);
             }
 
-            if ( position * 2 < max && !visited[ position * 2 ]) {
+            if ( position * 2 < MAX && !visited[ position * 2 ]) {
                 move(position, position * 2, visited, counts, queue);
             }
         }
@@ -58,7 +54,7 @@ public class Main {
         int x = scanner.nextInt();
         int y = scanner.nextInt();
 
-        System.out.println(Main.solve(x, y));
+        System.out.println(HideAndSeek.solve(x, y));
         
     }
 
