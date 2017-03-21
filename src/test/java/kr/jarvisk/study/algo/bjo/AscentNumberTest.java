@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AscentNumberTest {
 
-    @Test
+    @Test(timeout = 1000)
     public void test() {
         assertEquals(10, AscentNumber.solve(1));
         assertEquals(55, AscentNumber.solve(2));
