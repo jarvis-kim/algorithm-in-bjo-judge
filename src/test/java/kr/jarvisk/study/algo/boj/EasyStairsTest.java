@@ -1,6 +1,6 @@
-package kr.jarvisk.study.algo.bjo;
+package kr.jarvisk.study.algo.boj;
 
-import kr.jarvisk.study.algo.bjo.a10844_EasyStairs.EasyStairs;
+import kr.jarvisk.study.algo.boj.a10844_EasyStairs.EasyStairs;
 import org.junit.Assert;
 import org.junit.Test;
 

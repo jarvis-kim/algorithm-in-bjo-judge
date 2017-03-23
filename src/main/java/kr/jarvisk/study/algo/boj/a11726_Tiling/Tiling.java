@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a11726_Tiling;
+package kr.jarvisk.study.algo.boj.a11726_Tiling;
 
 import java.util.Scanner;
 

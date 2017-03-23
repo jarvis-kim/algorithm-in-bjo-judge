@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a10844_EasyStairs;
+package kr.jarvisk.study.algo.boj.a10844_EasyStairs;
 
 import java.util.Scanner;
 

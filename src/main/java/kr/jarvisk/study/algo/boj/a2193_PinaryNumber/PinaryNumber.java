@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a2193_PinaryNumber;
+package kr.jarvisk.study.algo.boj.a2193_PinaryNumber;
 
 import java.util.Scanner;
 

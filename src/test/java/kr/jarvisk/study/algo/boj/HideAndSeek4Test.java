@@ -1,7 +1,6 @@
-package kr.jarvisk.study.algo.bjo;
+package kr.jarvisk.study.algo.boj;
 
-import kr.jarvisk.study.algo.bjo.a13913_HideAndSeek4.HideAndSeek4;
-import org.junit.Assert;
+import kr.jarvisk.study.algo.boj.a13913_HideAndSeek4.HideAndSeek4;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

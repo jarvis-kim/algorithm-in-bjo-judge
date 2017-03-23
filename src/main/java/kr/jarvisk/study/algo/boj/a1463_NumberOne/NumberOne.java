@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a1463_NumberOne;
+package kr.jarvisk.study.algo.boj.a1463_NumberOne;
 /**
  * 1로 만들기
  * https://www.acmicpc.net/problem/1463

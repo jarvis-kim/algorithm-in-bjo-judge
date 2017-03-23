@@ -1,6 +1,6 @@
-package kr.jarvisk.study.algo.bjo;
+package kr.jarvisk.study.algo.boj;
 
-import kr.jarvisk.study.algo.bjo.a2193_PinaryNumber.PinaryNumber;
+import kr.jarvisk.study.algo.boj.a2193_PinaryNumber.PinaryNumber;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

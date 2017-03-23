@@ -1,6 +1,6 @@
-package kr.jarvisk.study.algo.bjo;
+package kr.jarvisk.study.algo.boj;
 
-import kr.jarvisk.study.algo.bjo.a9019_DSLR.DSLR;
+import kr.jarvisk.study.algo.boj.a9019_DSLR.DSLR;
 import org.junit.Assert;
 import org.junit.Test;
 

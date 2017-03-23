@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a9019_DSLR;
+package kr.jarvisk.study.algo.boj.a9019_DSLR;
 
 import java.util.LinkedList;
 import java.util.Queue;

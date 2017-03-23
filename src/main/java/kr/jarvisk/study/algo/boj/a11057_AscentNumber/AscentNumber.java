@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a11057_AscentNumber;
+package kr.jarvisk.study.algo.boj.a11057_AscentNumber;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;

@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a13913_HideAndSeek4;
+package kr.jarvisk.study.algo.boj.a13913_HideAndSeek4;
 
 import java.util.*;
 

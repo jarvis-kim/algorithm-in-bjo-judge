@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a9095_OneTwoThree;
+package kr.jarvisk.study.algo.boj.a9095_OneTwoThree;
 
 import java.util.Scanner;
 

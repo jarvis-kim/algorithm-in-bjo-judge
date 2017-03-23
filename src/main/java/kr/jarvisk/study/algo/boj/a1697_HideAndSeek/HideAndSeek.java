@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.bjo.a1697_HideAndSeek;
+package kr.jarvisk.study.algo.boj.a1697_HideAndSeek;
 
 import java.util.LinkedList;
 import java.util.Queue;
