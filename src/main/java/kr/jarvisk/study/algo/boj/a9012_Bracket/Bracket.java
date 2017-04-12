@@ -4,6 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
+/**
+ * 괄호
+ * https://www.acmicpc.net/problem/9012
+ */
 public class Bracket {
 
     private static final char LEFT_BRACKET = '(';
