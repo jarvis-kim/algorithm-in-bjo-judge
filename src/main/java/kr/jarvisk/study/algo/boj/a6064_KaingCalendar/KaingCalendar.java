@@ -8,6 +8,8 @@ import java.util.Scanner;
  *
  * 뭔가 패턴이 있을듯......O(M x N)
  * 아......이걸로 하면 시간초과다.......
+ *
+ * 보류...
  */
 public class KaingCalendar {
 
