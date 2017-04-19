@@ -1,13 +1,16 @@
 package kr.jarvisk.study.algo.boj;
 
 import kr.jarvisk.study.algo.boj.a1005_AcmCraft.AcmCraft;
+import kr.jarvisk.study.utils.TimeChecker;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class AcmCraftTest {
 
     @Test(timeout = 1000)
-    public void test() {
+    public void test() throws InterruptedException {
+
+        long start = System.currentTimeMillis();
         int[] times = new int[ 4 ];
         times[ 0 ] = 10;
         times[ 1 ] = 1;
@@ -44,6 +47,8 @@ public class AcmCraftTest {
 
         Assert.assertEquals(39, AcmCraft.solve(map, times, 7 - 1));
 
+        long end = System.currentTimeMillis();
+        System.out.println(TimeChecker.timeMs(start, end) + " MS");
     }
 
     @Test
