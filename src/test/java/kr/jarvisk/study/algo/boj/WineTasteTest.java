@@ -16,9 +16,9 @@ public class WineTasteTest {
 
     @Test
     public void testRecursive() {
-        assertEquals(23, WineTaste.solveWineTaste(2, 0));
-        assertEquals(33, WineTaste.solveWineTaste(5, 0));
-        assertEquals(40, WineTaste.solveWineTaste(5, 0));
-        assertEquals(4000, WineTaste.solveWineTaste(5, 0));
+        assertEquals(23, new WineTaste(6, 10, 13).solveWineTaste(2, 0));
+        assertEquals(33, new WineTaste(6, 10, 13, 9, 8, 1).solveWineTaste(5, 0));
+        assertEquals(40, new WineTaste(4, 5, 1, 1, 16, 15).solveWineTaste(5, 0));
+        assertEquals(4000, new WineTaste(1000, 1000, 1, 1, 1000, 1000).solveWineTaste(5, 0));
     }
 }

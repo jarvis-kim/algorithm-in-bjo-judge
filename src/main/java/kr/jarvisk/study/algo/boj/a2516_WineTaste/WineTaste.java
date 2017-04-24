@@ -55,28 +55,39 @@ public class WineTaste {
 
     private int[][] memoization;
 
-    public WineTaste(int[] wines) {
+    public WineTaste(int... wines) {
         this.wines = wines;
         memoization = new int[ wines.length ][ 3 ];
     }
 
     public int solveWineTaste(int index, int jump) {
-        if ( index < 0 ) {
-            return 0;
-        }
-
         if ( jump == 2 ) {
-            if ( memoization[ index - 1 ][ 0 ] == 0 ) {
-                memoization[ index - 1 ][ 0 ] = solveWineTaste(index - 1, 0);
+            if ( index - 1 < 0 ) {
+                return 0;
             }
-            return memoization[ index - 1 ][ 0 ];
+
+            if ( memoization[ index - 1 ][ 2 ] != 0 ) {
+                return memoization[ index - 1 ][ 2 ];
+            }
+
+            return memoization[ index - 1 ][ 2 ] = solveWineTaste(index - 1, 0);
         }
 
-        if ( memoization[ index - 1 ][ jump + 1 ] > 0 ) {
-            memoization[ index - 1 ][ jump + 1 ] = wines[ index ];
+        if ( index - 1 < 0 ) {
+            if ( memoization[ index ][ jump + 1 ] == 0 ) {
+                memoization[ index ][ jump + 1 ] = wines[ index ];
+            }
+        } else {
+            if ( memoization[ index ][ jump + 1 ] == 0 ) {
+                memoization[ index ][ jump + 1 ] = solveWineTaste(index - 1, jump + 1) + wines[ index ];
+            }
+
+            if ( memoization[ index  ][ 0 ] == 0 ) {
+                memoization[ index ][ 0 ] = solveWineTaste(index - 1, 0);
+            }
         }
 
-        return Math.max(solveWineTaste(index - 1, jump + 1) + wines[ index ], solveWineTaste(index - 1, 0));
+        return Math.max(memoization[ index ][ jump + 1 ], memoization[ index ][ 0 ]);
     }
 
     public static void main(String[] args) {
