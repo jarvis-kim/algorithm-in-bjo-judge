@@ -12,42 +12,23 @@ public class WineTaste {
 
     public static int solve(int... wines) {
         int n = wines.length;
+        int[] sums = new int[ n ];
 
-        int[][] sums = new int[ n ][ 2 ];
-        int[][] choiceCount = new int[ wines.length ][ 2 ];
-
-        sums[ 0 ][ 1 ] = wines[ 0 ];
-        choiceCount[ 0 ][ 1 ] = 1;
-
+        sums[ 0 ] = wines[ 0 ];
         if ( n == 1 ) {
-            return sums[ 0 ][ 1 ];
+            return sums[ 0 ];
+        }
+        sums[ 1 ] = wines[ 0 ] + wines[ 1 ];
+        if ( n == 2 ) {
+            return sums[ 1 ];
+        }
+        sums[ 2 ] = Math.max(sums[ 1 ], Math.max(sums[ 0 ] + wines[ 2 ], wines[ 1 ] + wines[ 2 ]));
+
+        for ( int i = 3; i < n; i++ ) {
+            sums[ i ] = Math.max(sums[ i - 1 ], Math.max(sums[ i - 2 ] + wines[ i ], sums[ i - 3 ] + wines[ i - 1 ] + wines[ i ]));
         }
 
-        sums[ 1 ][ 0 ] = wines[ 1 ];
-        choiceCount[ 1 ][ 0 ] = 1;
-        sums[ 1 ][ 1 ] = sums[ 0 ][ 1 ] + wines[ 1 ];
-        choiceCount[ 1 ][ 1 ] = 2;
-
-        int a, b;
-        for ( int i = 2; i < n; i++ ) {
-            sums[ i ][ 0 ] = Math.max(sums[ i - 2 ][ 0 ], sums[ i - 2 ][ 1 ]) + wines[ i ];
-
-            a = sums[ i - 1 ][ 0 ] + wines[ i ];
-            choiceCount[ i ][ 0 ] = 1;
-            b = sums[ i - 1 ][ 1 ];
-
-            choiceCount[ i ][ 1 ] = 1;
-
-            if ( choiceCount[ i - 1 ][ 1 ] != 2 ) {
-                b += wines[ i ];
-            }
-            sums[ i ][ 1 ] = Math.max(a, b);
-            if ( a > b ) {
-                choiceCount[ i ][ 1 ]++;
-            }
-        }
-
-        return Math.max(sums[ n - 1 ][ 0 ], sums[ n - 1 ][ 1 ]);
+        return sums[ n - 1 ];
     }
 
 
@@ -88,6 +69,17 @@ public class WineTaste {
         }
 
         return Math.max(memoization[ index ][ jump + 1 ], memoization[ index ][ 0 ]);
+    }
+
+    public int solveWineTaste2(int index, int jump) {
+        if ( index < 0 ) {
+            return 0;
+        }
+        if ( jump == 2 ) {
+            return solveWineTaste2(index - 1, 0);
+        }
+
+        return Math.max(solveWineTaste2(index - 1, jump + 1) + wines[ index ], solveWineTaste2(index - 1, 0));
     }
 
     public static void main(String[] args) {
