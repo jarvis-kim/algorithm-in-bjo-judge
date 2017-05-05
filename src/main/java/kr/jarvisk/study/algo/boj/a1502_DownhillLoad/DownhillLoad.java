@@ -11,6 +11,8 @@ import java.util.Scanner;
  * 일단 패스.
  *
  * 시간 초과 해결하니...틀렸네..;;
+ *
+ * 아...... 위로는 안가는건줄 알았는데 위로도 가는거네..-_-;;;
  */
 public class DownhillLoad {
 
@@ -45,6 +47,13 @@ public class DownhillLoad {
                 pathCount[ m - 1 ][ n ] = solve(m - 1, n);
             }
             sum += pathCount[ m - 1 ][ n ];
+        }
+
+        if ( m + 1 < y && map[ m ][ n ] < map[ m + 1 ][ n ] ) {
+            if ( pathCount[ m + 1 ][ n ] < 0 ) {
+                pathCount[ m + 1 ][ n ] = solve(m + 1, n);
+            }
+            sum += pathCount[ m + 1 ][ n ];
         }
 
         if ( n - 1 >= 0 && map[ m ][ n ] < map[ m ][ n - 1 ] ) {
