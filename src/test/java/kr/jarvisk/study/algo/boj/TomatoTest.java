@@ -4,7 +4,7 @@ import kr.jarvisk.study.algo.boj.a7576_Tomato.Tomato;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ToamtoTest {
+public class TomatoTest {
 
     @Test
     public void test() {
@@ -20,12 +20,10 @@ public class ToamtoTest {
     @Test
     public void test2() {
         int[][] data1 = new int[][] {
-                new int[] { 0, 0, 0, 0, 0, 0 },
-                new int[] { 0, 0, 0, 0, 0, 0 },
-                new int[] { 0, 0, 0, 0, 0, 0 },
-                new int[] { 0, 0, 0, 0, 0, 0 }
+                new int[] { 0, 0 },
+                new int[] { 0, 0 },
         };
-        Assert.assertEquals(0, Tomato.solve(data1));
+        Assert.assertEquals(-1, Tomato.solve(data1));
     }
 
     @Test

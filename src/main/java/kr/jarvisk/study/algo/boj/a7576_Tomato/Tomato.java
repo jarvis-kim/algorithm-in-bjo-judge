@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Tomato {
 
     public static int solve(int[][] tomato) {
-        int day = 0;
+        int day = -1;
         int n = tomato.length;
         int m = tomato[ 0 ].length;
 
@@ -28,9 +28,6 @@ public class Tomato {
         while ( queue.size() > 0 ) {
             day++;
             queue = next(tomato, queue);
-            if ( queue.size() == 0 ) {
-                day--;
-            }
         }
 
         return day;
