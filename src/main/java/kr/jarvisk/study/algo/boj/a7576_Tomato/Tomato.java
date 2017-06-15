@@ -1,5 +1,6 @@
 package kr.jarvisk.study.algo.boj.a7576_Tomato;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -30,7 +31,9 @@ public class Tomato {
             queue = next(tomato, queue);
         }
 
-        return day;
+        boolean allRipen = Arrays.stream(tomato).flatMapToInt(x -> Arrays.stream(x)).filter(value -> value == 0).count() == 0;
+        
+        return allRipen ? day : -1;
     }
 
     public static Queue<Position> next(int[][] tomato, Queue<Position> queue) {

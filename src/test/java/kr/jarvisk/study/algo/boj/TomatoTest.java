@@ -55,4 +55,13 @@ public class TomatoTest {
         };
         Assert.assertEquals(1, Tomato.solve(data1));
     }
+
+    @Test
+    public void test6() {
+        int[][] data1 = new int[][] {
+                new int[] { 1, -1 },
+                new int[] { -1, 0 },
+        };
+        Assert.assertEquals(-1, Tomato.solve(data1));
+    }
 }
