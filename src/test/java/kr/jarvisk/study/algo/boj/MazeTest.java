@@ -1,0 +1,32 @@
+package kr.jarvisk.study.algo.boj;
+
+import kr.jarvisk.study.algo.boj.a2178_Maze.Maze;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MazeTest {
+
+    @Test
+    public void test() {
+        int[][] map = new int[][] {
+                new int[] { 1, 0, 1, 1, 1, 1 },
+                new int[] { 1, 0, 1, 0, 1, 0 },
+                new int[] { 1, 0, 1, 0, 1, 1 },
+                new int[] { 1, 1, 1, 0, 1, 1 },
+        };
+
+        Assert.assertEquals(15, Maze.solve(map, map[ 0 ].length, map.length));
+    }
+
+    @Test
+    public void test2() {
+        int[][] map = new int[][] {
+                new int[] { 1, 1, 0, 1, 1, 0 },
+                new int[] { 1, 1, 0, 1, 1, 0 },
+                new int[] { 1, 1, 1, 1, 1, 1 },
+                new int[] { 1, 1, 1, 1, 0, 1 },
+        };
+
+        Assert.assertEquals(9, Maze.solve(map, map[ 0 ].length, map.length));
+    }
+}
