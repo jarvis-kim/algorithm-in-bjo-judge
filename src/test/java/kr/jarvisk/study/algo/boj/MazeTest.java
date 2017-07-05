@@ -79,14 +79,29 @@ public class MazeTest {
     @Test
     public void test5Bfs() {
         int[][] map = new int[][] {
-                new int[] { 1, 1, 1, 1, 1},
-                new int[] { 0, 0, 0, 0, 1},
-                new int[] { 1, 1, 1, 1, 1},
-                new int[] { 1, 0, 1, 0, 0},
-                new int[] { 1, 1, 1, 1, 1}
+                new int[] { 1, 1, 1, 1, 1 },
+                new int[] { 0, 0, 0, 0, 1 },
+                new int[] { 1, 1, 1, 1, 1 },
+                new int[] { 1, 0, 1, 0, 0 },
+                new int[] { 1, 1, 1, 1, 1 }
         };
 
         Assert.assertEquals(13, Maze.bfs(map));
+    }
+
+    @Test
+    public void test6Bfs() {
+        int[][] map = new int[][] {
+                new int[] { 1, 1, 1, 1, 1 },
+                new int[] { 1, 0, 0, 0, 1 },
+                new int[] { 1, 1, 1, 0, 1 },
+                new int[] { 0, 1, 0, 0, 1 },
+                new int[] { 1, 1, 1, 0, 1 },
+                new int[] { 1, 0, 0, 0, 1 },
+                new int[] { 1, 1, 1, 1, 1 }
+        };
+
+        Assert.assertEquals(11, Maze.bfs(map));
     }
 
 

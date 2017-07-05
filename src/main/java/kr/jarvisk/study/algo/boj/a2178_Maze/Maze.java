@@ -23,17 +23,18 @@ public class Maze {
         queue.add(new Position(0, 0));
         visited[ 0 ][ 0 ] = true;
 
-        while ( !queue.isEmpty() ) {
+        while ( !queue.isEmpty() && !visited[ n - 1 ][ m - 1 ]) {
             queue = nextBfs(map, visited, queue, m, n);
             count++;
         }
 
-        return count - 1;
+        return count;
     }
 
     static Queue<Position> nextBfs(int[][] map, boolean[][] visited, Queue<Position> queue, int m, int n) {
         Queue<Position> next = new LinkedList<>();
 
+//        print(map, visited);
         while ( queue.size() > 0 ) {
             Position pos = queue.poll();
             int y = pos.y;
@@ -55,9 +56,29 @@ public class Maze {
                 next.add(new Position(y, x + 1));
                 visited[ y ][ x + 1 ] = true;
             }
+
         }
 
         return next;
+    }
+
+    static int COUNT = 1;
+    public static void print(int[][] map, boolean[][] visited) {
+
+        System.out.println("============" + COUNT++ + "==============");
+        for ( int i = 0; i < visited.length; i++ ) {
+            for ( int j = 0; j < visited[ i ].length; j++ ) {
+                if ( visited[ i ][ j ] ) {
+                    System.out.printf(" *");
+                } else {
+                    System.out.printf("%2d", map[ i][ j ]);
+                }
+            }
+
+            System.out.println();
+        }
+
+        System.out.println();
     }
 
     public static int solve(int[][] map, int m, int n) {
