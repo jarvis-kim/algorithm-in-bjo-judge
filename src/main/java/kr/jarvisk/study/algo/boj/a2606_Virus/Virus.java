@@ -32,7 +32,7 @@ public class Virus {
             return parentNode;
         }
     }
-                                                                                                                                                                                                                                                                                                                                                                                         
+    
     public static class Node {
         private int name;
 
