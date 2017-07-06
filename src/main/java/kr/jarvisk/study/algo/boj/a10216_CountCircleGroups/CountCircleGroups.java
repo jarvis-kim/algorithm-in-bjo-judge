@@ -117,7 +117,7 @@ public class CountCircleGroups {
         private Map<T, Node> nodeMap;
 
         public DisjointSet(T[] objs) {
-            int capacity = (int) (objs.length + objs.length * 0.75f) + 1;
+            int capacity = (int) (objs.length + objs.length * 0.25f) + 1;
             nodeMap = new HashMap<>(capacity);
             for ( T obj : objs ) {
                 Node<T> node = new Node<>(obj);
@@ -137,6 +137,14 @@ public class CountCircleGroups {
                 root = root.parent;
             }
 
+            /* path compression */
+            Node next;
+            while ( root != node.parent ) {
+                next = node.parent;
+                node.parent = root;
+                node = next;
+            }
+
             return root;
         }
 
@@ -144,12 +152,24 @@ public class CountCircleGroups {
             Node node1 = find(t1);
             Node node2 = find(t2);
 
-            node2.parent = node1;
-
-            return node1;
+            /* union-by-rank */
+            if ( node1.hight == node2.hight ) {
+                node2.parent = node1;
+                node1.hight++;
+                return node1;
+            } else if ( node1.hight > node2.hight) {
+                node2.parent = node1;
+                return node1;
+            } else {
+                node1.parent = node2;
+                return node2;
+            }
         }
 
         public static class Node<T> {
+
+            private int hight = 0;
+
             private T t;
 
             private Node<T> parent;
