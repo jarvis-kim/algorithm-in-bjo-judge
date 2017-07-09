@@ -55,19 +55,19 @@ public class CountCircleGroups {
         private final int y;
         private final int r;
 
-        private Rect rect;
+        private Circle circle;
 
         public Station(int name, int x, int y, int r) {
             this.name = name;
             this.x = x;
             this.y = y;
             this.r = r;
-            rect = new Rect(x - r, y - r, r * 2, r * 2);
+            circle = new Circle(x, y, r);
         }
 
         public boolean overlap(Station s2) {
             Station s1 = this;
-            return s1.rect.overlap(s2.rect);
+            return s1.circle.overlap(s2.circle);
         }
 
         @Override
@@ -87,28 +87,21 @@ public class CountCircleGroups {
         }
     }
 
-    public static class Rect {
-        int x;
-        int y;
-        int w;
-        int h;
+    public static class Circle {
+        int x, y;
+        int radius;
 
-        public Rect(int x, int y, int w, int h) {
+        public Circle(int x, int y, int radius) {
             this.x = x;
             this.y = y;
-            this.w = w;
-            this.h = h;
+            this.radius = radius;
         }
 
-        public boolean overlap(Rect rect) {
-            Rect r1 = this;
-            Rect r2 = rect;
-            if ( r1.x > r2.x + r2.w ) return false;
-            if ( r1.x + r1.w < r2.x ) return false;
-            if ( r1.y > r2.y + r2.h ) return false;
-            if ( r1.y + r1.h < r2.y ) return false;
+        public boolean overlap(Circle circle2) {
+            Circle circle1 = this;
+            double tmp = Math.sqrt(Math.pow(circle1.x - circle2.x, 2) + Math.pow(circle1.y - circle2.y, 2));
 
-            return true;
+            return tmp <= circle1.radius + circle2.radius;
         }
     }
 
