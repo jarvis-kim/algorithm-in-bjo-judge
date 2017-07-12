@@ -1,6 +1,6 @@
 package kr.jarvisk.study.algo.boj;
 
-import kr.jarvisk.study.algo.boj.a1324_Hacking.Hacking;
+import kr.jarvisk.study.algo.boj.a1325_Hacking.Hacking;
 import org.junit.Test;
 
 import java.util.List;

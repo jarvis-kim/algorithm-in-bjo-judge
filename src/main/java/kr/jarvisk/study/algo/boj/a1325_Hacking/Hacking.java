@@ -1,4 +1,4 @@
-package kr.jarvisk.study.algo.boj.a1324_Hacking;
+package kr.jarvisk.study.algo.boj.a1325_Hacking;
 
 import java.util.*;
 import java.util.stream.Collectors;
