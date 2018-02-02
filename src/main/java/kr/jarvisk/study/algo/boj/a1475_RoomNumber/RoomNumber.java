@@ -1,5 +1,6 @@
 package kr.jarvisk.study.algo.boj.a1475_RoomNumber;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -8,6 +9,33 @@ import java.util.Scanner;
  */
 public class RoomNumber {
 
+    /**
+     * 2018. 02. 02 추가. (성공)
+     * @param stringNumber
+     * @return
+     */
+    public static int solve2(String stringNumber) {
+        int[] numbers = Arrays.stream(stringNumber.split(""))
+                .map(Integer::valueOf)
+                .mapToInt(Integer::valueOf)
+                .toArray();
+
+        int[] count = new int[ 10 ];
+        for ( int i = 0; i < numbers.length; i++ ) {
+            int m = numbers[ i ];
+            if ( m == 6 || m == 9 ) {
+                m = count[ 6 ] < count[ 9 ] ? 6 : 9;
+            }
+            
+            count[ m ]++;
+        }
+
+        return Arrays.stream(count).max().getAsInt();
+    }
+
+    /**
+     * 처음 풀었던것.. 무슨 생각으로 이랬을까??
+     */
     public static int solve(int n) {
         int[] numbers = new int[ 10 ];
         int length = (int) (Math.log10(n) + 1);
@@ -33,7 +61,7 @@ public class RoomNumber {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        System.out.println(solve(n));
+        String n = scanner.next();
+        System.out.println(solve2(n));
     }
 }
